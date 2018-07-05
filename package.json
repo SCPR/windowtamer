@@ -1,0 +1,23 @@
+{
+  "name": "windowtamer",
+  "version": "1.0.0",
+  "description": "automatically fix typographic widows on your web pages",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravenstine/windowtamer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ravenstine/windowtamer/issues"
+  },
+  "homepage": "https://github.com/ravenstine/windowtamer#readme",
+  "license": "https://raw.githubusercontent.com/nathanford/widowtamer/master/LICENSE.txt",
+  "readme": "The Widow Tamer\n\n…is a Javascript to automatically fix typographic widows on your web pages. It is designed to work with responsive sites, fixing widows as it finds them on resize or orientation change.\n\nWhat is a Widow?\n\nWidows are left over characters at the end of a paragraph. If the last line of a paragraph contains less than 14 characters (for example), it is said to have a widow. Widows are disruptive to both text layouts and reading experiences. Therefore, we must tame them.\n\nHow does The Widow Tamer work?\n\nBy setting the elements you want fixed, the number of characters you consider a “widow”, and the method by which you want them fixed, you can eliminate widows from your site. The script will cycle through the elements, apply your “method” (more on that later), check if the widow has been fixed, and repeat until the widow is tamed.\n\nYou only need to download the script, and link it in the HEAD of your page(s). Then, you can call a simple Javascript function to start taming widows:\n\n    wt.fix();\n\nYou can also set a few custom options:\n\nOption\t\tDescription\t\t\t\t\tDefault\n\nelements\tWhich elements? jQuery-like Selector\t\t'p,li,dd'\n\nchars\t\tNumber of characters to qualify a “widow”\t14\n\nmethod\t\tMethod by which to fix the widow\t\t'word-spacing'\n\t\tOptions:\t'word-spacing'\n\t\t\t\t'padding-right/padding-left'\n\t\t\t\t'letter-spacing'\n\t\t\t\t'nbsp'\n\ndir\t\tUsed with certain methods. +/- change\t\t'pos'\n\t\tOptions:\t'pos'\n\t\t\t\t'neg'\n\nevent\t\tAny window events on which to run the fix\t'orientationchange'\n\t\tSuggested Options:\t'orientationchange'\n\t\t\t\t\t'resize'\n\nThe script will run initially on window.onload, and then fire every time the 'event' is triggered.\n\nExample Implementation\n\nYou can run multiple instances of the function target different elements with different methods. For example, here we are adding padding to the right of paragraphs in our main post article:\n\n    wt.fix({\n\telements: '#posts article p',\n\tchars: 20,\n\tmethod: 'padding-right',\n\tevent: 'resize'\n    });\n\nAnd on the same page, on the same events, we may want to fix the headers in our footer by adding non-breaking spaces:\n\n    wt.fix({\n\telements: 'footer aside h1',\n\tchars: 20,\n\tmethod: 'nbsp',\n\tevent: 'resize'\n    });\n\nBrowser Support\n\nThe Widow Tamer works in IE8+ and all other modern browsers.\n\nDetails\n\nThe Widow Tamer was created by Nathan Ford. Feel free to interrupt him any time with questions, concerns, complaints, etc.\n\nnathan@artequalswork.com\n@nathan_ford on Twitter\n\n",
+  "readmeFilename": "README",
+  "_id": "windowtamer@1.0.0",
+  "_shasum": "65ac1b6a7a19455d5f6e9f8bbdcb0f3d12a5441c",
+  "_resolved": "git+https://github.com/Ravenstine/widowtamer.git#beccad6ecc3404795e26efd9839f5a6b002b2e52",
+  "_from": "windowtamer@git+https://github.com/Ravenstine/widowtamer.git#beccad6ecc3404795e26efd9839f5a6b002b2e52"
+}
